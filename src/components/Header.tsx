@@ -1,9 +1,11 @@
 import styles from './Header.module.css';
 
+import todoListLogo from '../assets/logo.svg';
+
 export function Header() {
   return (
     <header className={styles.header}>
-      <h1>Header</h1>
+      <img src={todoListLogo} alt="Logo ToDoList 2023" />
     </header>
   )
 }
