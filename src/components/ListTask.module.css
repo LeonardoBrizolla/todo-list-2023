@@ -1,0 +1,45 @@
+.wrapperListTask {
+  margin-top: 4rem;
+}
+
+.listTaskHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.createdTasksWrapper, .doneTasksWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.createdTasksWrapper strong {
+  color: var(--blue);
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  font-weight: bold;
+}
+
+.createdTasksWrapper span, .doneTasksWrapper  span {
+  color: var(--gray-200);
+  font-family: "Inter", sans-serif;
+  font-size: 0.75rem;
+
+  padding: 2px 8px;
+  border-radius: 999px;
+  background-color: var(--gray-400);
+}
+
+.doneTasksWrapper strong {
+  color: var(--purple);
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  font-weight: bold;
+}
+
+.tasksContainer {
+  margin-top: 2.5rem;
+}

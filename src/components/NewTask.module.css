@@ -1,3 +1,7 @@
+.wrapperNewTask {
+  display: flex;
+}
+
 .input {
   flex: 1;
   height: 54px;
