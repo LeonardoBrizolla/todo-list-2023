@@ -35,6 +35,10 @@
   padding-left: 52px;
 }
 
+.taskContainer + .taskContainer {
+  margin-top: 0.75rem;
+}
+
 .content {
   color: var(--gray-100);
   font-family: 'Inter', sans-serif;
