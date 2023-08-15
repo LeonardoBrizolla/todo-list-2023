@@ -7,26 +7,47 @@ import styles from './App.module.css';
 
 import './global.css';
 
+export interface ITasks {
+  content: string;
+  done: boolean;
+}
+
 export function App() {
-  const [tasks, setTasks] = useState<string[]>([]);
+  const [tasks, setTasks] = useState<ITasks[]>([]);
   const [newTask, setNewTask] = useState('');
 
   function handleAddTask(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
-    setTasks([...tasks, newTask]);
+    const newTaskAdd = { content: newTask, done: false };
+
+    setTasks([...tasks, newTaskAdd]);
     setNewTask('');
   }
 
   function deleteTask(contentTextToDelete: string) {
     const newTasksWithoutContentTextToDelete = tasks.filter(
-      (task) => task !== contentTextToDelete
+      (task) => task.content !== contentTextToDelete
     );
     setTasks(newTasksWithoutContentTextToDelete);
   }
 
   function newTaskText(contentTextToNewTask: string) {
     setNewTask(contentTextToNewTask);
+  }
+
+  function checkTask(taskText: string) {
+    const newTasks = [...tasks];
+
+    const foundTaskToChange = newTasks.find(
+      (task) => task.content === taskText
+    );
+
+    if (foundTaskToChange) {
+      foundTaskToChange.done = !foundTaskToChange.done;
+    }
+
+    setTasks([...newTasks]);
   }
 
   return (
@@ -39,7 +60,11 @@ export function App() {
           newTask={newTask}
           onAddTask={handleAddTask}
         />
-        <ListTask tasks={tasks} onDeleteTask={deleteTask} />
+        <ListTask
+          tasks={tasks}
+          onDeleteTask={deleteTask}
+          onCheckTask={checkTask}
+        />
       </main>
     </div>
   );
