@@ -11,6 +11,13 @@
   border: 1px solid var(--gray-700);
   margin-right: 8px;
   color: var(--gray-100);
+  outline: none;
+
+  transition: border 0.2s;
+}
+
+.input:hover {
+  border: 1px solid var(--purple-dark);
 }
 
 .button {
@@ -18,7 +25,7 @@
   width: 90px;
   background-color: var(--blue-dark);
   border-radius: 8px;
-  padding: 16px;
+  padding: 1rem;
   border: 0px;
   color: var(--gray-100);
   font-weight: 700;
@@ -27,4 +34,10 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
+
+  transition: background 0.2s;
+}
+
+.button:hover {
+  background: var(--blue);
 }
